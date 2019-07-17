@@ -13,6 +13,7 @@ fn main() {
     cc::Build::new()
         .cpp(true)
         .file("ext/vswhom.cpp")
+        .static_crt(true)
         .compile("vswhom");
 
     println!("cargo:rustc-link-lib=dylib=OleAut32");
